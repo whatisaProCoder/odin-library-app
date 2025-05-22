@@ -58,7 +58,11 @@
 body {
     background-color: var(--background-color);
     display: grid;
-    grid-template-rows: min-content 1fr min-content;
+    grid-template-rows: 1fr min-content;
+    grid-template-columns: 3fr 23ch;
+    padding: 1rem;
+    padding-top: 4.5rem;
+    gap: 1rem;
 }
 
 .header {
@@ -67,12 +71,18 @@ body {
     border-width: 0;
     border-color: var(--border-color);
     border-bottom-width: 2px;
-    grid-row: 1/2;
     padding: 0.4rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
 }
 
 .brand {
@@ -81,11 +91,18 @@ body {
     gap: 0.8rem;
 }
 
-.brand>.icon {
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand>.icon-container>.icon {
     height: 2.6rem;
     border: 2px solid var(--border-color);
     border-radius: 0.2rem;
     fill: var(--accent-color);
+    box-sizing: border-box;
 }
 
 .brand>.title {
@@ -134,4 +151,213 @@ body {
 .profile-name {
     font-weight: 600;
     user-select: none;
+    color: var(--main-text-color);
+}
+
+@media screen and (max-width: 460px) {
+    .profile-section>.profile-name {
+        display: none;
+    }
+}
+
+dialog {
+    animation: fade-out 0.3s ease-out;
+}
+
+dialog:open {
+    animation: fade-in 0.3s ease-out;
+}
+
+dialog:open::backdrop {
+    animation: backdrop-fade-in 0.3s ease-out forwards;
+}
+
+/* Animation keyframes */
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes backdrop-fade-in {
+    0% {
+        background-color: rgb(0 0 0 / 0%);
+        backdrop-filter: blur(0px);
+    }
+
+    100% {
+        background-color: rgb(0 0 0 / 10%);
+        backdrop-filter: blur(2px);
+    }
+}
+
+.profile-dialog-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--border-color);
+    border-radius: 0.4rem;
+    padding: 1.5rem;
+    width: 350px;
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+}
+
+.profile-dialog-box>.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile-dialog-box>.container>.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--border-color);
+    border-width: 0;
+    border-bottom-width: 2px;
+    color: var(--main-text-color);
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+.profile-dialog-box>.container>.dialog-header>.text {
+    color: var(--main-text-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.profile-dialog-box>.container>.dialog-header>.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+}
+
+.profile-dialog-box>.container>.dialog-header>.icon-container>.icon {
+    width: 2rem;
+    fill: var(--main-text-color);
+}
+
+.profile-dialog-box>.container>.dialog-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+}
+
+.profile-dialog-box>.container>.dialog-content>.profile-name {
+    font-size: 1.2rem;
+}
+
+.profile-dialog-box>.container>.dialog-content>.profile-image {
+    height: 3rem;
+    border-radius: 0.4rem;
+}
+
+.profile-dialog-box>.container>.button-group {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+}
+
+.profile-dialog-box>.container>.button-group>a {
+    text-decoration: none;
+    flex: 1;
+}
+
+.linkedin-button {
+    background-color: #0a66c2;
+    padding: 1rem 1.5rem;
+    color: var(--white);
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 0.2rem;
+    user-select: none;
+}
+
+.github-button {
+    background-color: #24292E;
+    padding: 1rem 1.5rem;
+    color: var(--white);
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 0.2rem;
+    user-select: none;
+}
+
+.features {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--main-text-color);
+}
+
+.features>.title {
+    color: var(--accent-text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-left: 0.4rem;
+}
+
+.features>.container {
+    background-color: var(--primary-color);
+    border: 2px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+}
+
+.features>.container>.feature {
+    padding: 0.5rem;
+    font-weight: 500;
+}
+
+.features>.container>.feature:not(:last-child) {
+    border: 0px solid var(--border-color);
+    border-bottom-width: 1px;
+}
+
+@media screen and (max-width:750px) {
+    .features {
+        display: none;
+    }
+
+    body {
+        grid-template-columns: 1fr;
+    }
+}
+
+.content {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
 }

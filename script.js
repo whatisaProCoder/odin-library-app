@@ -18,3 +18,23 @@ toggleButton.addEventListener('click', () => {
     htmlElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
 });
+
+const profileImage = document.querySelector(".profile-image");
+const profileName = document.querySelector(".profile-name");
+const profileDialogBox = document.querySelector(".profile-dialog-box");
+
+profileImage.addEventListener("click", () => {
+    profileDialogBox.showModal();
+});
+
+profileName.addEventListener("click", () => {
+    profileDialogBox.showModal();
+});
+
+const profileDialogBoxCloseButton = document.querySelector("#close-profile-dialog-box-button");
+
+profileDialogBoxCloseButton.addEventListener("click", () => {
+    profileDialogBox.close();
+});
+
+
