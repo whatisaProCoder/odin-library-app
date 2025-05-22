@@ -57,7 +57,7 @@ function updateBookGrid() {
             <div class="description">${book.description}</div>
             <div class="action-group">
                 <div class="read-group">
-                    <label for="checkbox-${book.id}">READ</label>
+                    <label for="checkbox-${book.id}">DONE READING?</label>
                     <input class="checkbox" id="checkbox-${book.id}" type="checkbox">
                 </div>
                 <div  class="delete-button" id="delete-button-${book.id}">Delete</div>
