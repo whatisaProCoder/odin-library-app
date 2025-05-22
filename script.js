@@ -100,9 +100,6 @@ function addBookToLibrary(title, author, numPages, description, readStatus) {
     updateBookGrid();
 }
 
-addBookToLibrary("Title 1", "Author 1", "100", "Description 1", true);
-addBookToLibrary("Title 2", "Author 2", "200", "Description 2", false);
-
 const newBookDialogBox = document.querySelector(".new-book-dialog-box");
 const newButton = document.querySelector(".new-button");
 
@@ -113,6 +110,26 @@ newButton.addEventListener("click", () => {
 const newBookDialogBoxCloseButton = document.querySelector("#close-new-book-dialog-box-button");
 newBookDialogBoxCloseButton.addEventListener("click", () => {
     newBookDialogBox.close();
-})
+});
+
+const newBookForm = document.querySelector("#new-book-form");
+
+newBookForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(newBookForm);
+
+    const title = formData.get("title");
+    const author = formData.get("author");
+    const pages = formData.get("pages");
+    const description = formData.get("description");
+    const read = formData.get("read");
+
+
+    addBookToLibrary(title, author, pages, description, read);
+    newBookDialogBox.close();
+});
+
+addBookToLibrary("Alice's Adventures in Wonderland", "Lewis Carrol", 200, "The story is about a girl named Alice who falls into a magical world filled with strange creatures and curious adventures.", false);
 
 
