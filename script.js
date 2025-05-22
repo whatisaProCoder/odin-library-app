@@ -103,6 +103,16 @@ function addBookToLibrary(title, author, numPages, description, readStatus) {
 addBookToLibrary("Title 1", "Author 1", "100", "Description 1", true);
 addBookToLibrary("Title 2", "Author 2", "200", "Description 2", false);
 
+const newBookDialogBox = document.querySelector(".new-book-dialog-box");
+const newButton = document.querySelector(".new-button");
 
+newButton.addEventListener("click", () => {
+    newBookDialogBox.showModal();
+});
+
+const newBookDialogBoxCloseButton = document.querySelector("#close-new-book-dialog-box-button");
+newBookDialogBoxCloseButton.addEventListener("click", () => {
+    newBookDialogBox.close();
+})
 
 

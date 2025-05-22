@@ -102,6 +102,52 @@
     <div class="footer">
         &copy; 2025 Pritam Debnath. All rights reserved.
     </div>
+    <dialog class="new-book-dialog-box" closeby="any" open>
+        <div class="container">
+            <div class="dialog-header">
+                <div class="text">Add book</div>
+                <div class="icon-container" id="close-new-book-dialog-box-button">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <title>Close</title>
+                        <path
+                            d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="dialog-content">
+                <form id="new-book-form">
+                    <div class="form-item">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" name="author" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="pages">Number of pages</label>
+                        <input type="number" id="pages" name="pages" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" required></textarea>
+                    </div>
+                    <div class="form-item-checkbox">
+                        <label for="read">Already read?</label>
+                        <input type="checkbox" id="read" name="read" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="reset" class="reset-button">
+                            Reset
+                        </button>
+                        <button type="submit" class="submit-button">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </dialog>
 </body>
 
 </html>
