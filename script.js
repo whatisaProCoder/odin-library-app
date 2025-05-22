@@ -131,6 +131,6 @@ newBookForm.addEventListener("submit", (event) => {
 });
 
 addBookToLibrary("Alice's Adventures in Wonderland", "Lewis Carrol", 200, "The story is about a girl named Alice who falls into a magical world filled with strange creatures and curious adventures.", false);
-addBookToLibrary("Harry Potter and the Deathly Hallows", "J.K. Rowling", 607, "The young wizard Harry Potter is about to turn seventeen and therefore lose the protective magic shield his mother's sacrifice gave him. He is being escorted to The Burrow by members of the Order of the Phoenix when the group is attacked by Death Eaters. Hedwig and \"Mad - Eye\" Moody are killed and George Weasley loses an ear. Lord Voldemort attempts to kill Harry but fails.", true);
+addBookToLibrary("Harry Potter and the Deathly Hallows", "J.K. Rowling", 607, "Harry Potter and the Deathly Hallows follows Harry, Ron, and Hermione as they hunt down Voldemort’s Horcruxes to destroy him. It's a final battle of good vs evil, with epic sacrifices, secrets revealed, and the fate of the wizarding world at stake.", true);
 
 
