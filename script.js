@@ -110,6 +110,7 @@ newButton.addEventListener("click", () => {
 const newBookDialogBoxCloseButton = document.querySelector("#close-new-book-dialog-box-button");
 newBookDialogBoxCloseButton.addEventListener("click", () => {
     newBookDialogBox.close();
+    newBookForm.reset();
 });
 
 const newBookForm = document.querySelector("#new-book-form");
@@ -128,6 +129,7 @@ newBookForm.addEventListener("submit", (event) => {
 
     addBookToLibrary(title, author, pages, description, read);
     newBookDialogBox.close();
+    newBookForm.reset();
 });
 
 addBookToLibrary("Alice's Adventures in Wonderland", "Lewis Carrol", 200, "The story is about a girl named Alice who falls into a magical world filled with strange creatures and curious adventures.", false);
