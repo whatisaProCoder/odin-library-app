@@ -486,6 +486,7 @@ dialog:open::backdrop {
     padding: 0.25rem 0.5rem;
     border: 1px solid var(--border-color);
     border-radius: 0.25rem;
+    user-select: none;
 }
 
 .footer {
